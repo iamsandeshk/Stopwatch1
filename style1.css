@@ -41,15 +41,7 @@ h1 {
 .time {
     font-size: 2em;
     margin-top: 40px;
-}
-
-#dateDisplay {
-    font-size: 18px;
-    font-family: Arial, sans-serif;
-    margin-left: 45px;
-    margin-right: auto;
-    color:orange;
-  }
+}
   .name {
       margin-left: 12.5rem;
       margin-right: auto;
