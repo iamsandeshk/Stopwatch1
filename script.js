@@ -86,17 +86,5 @@ window.onload = function () {
       }
 
     }
-     
-      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      var currentDate = new Date();
-      var month = months[currentDate.getMonth()];
-      var day = currentDate.getDate();
-      var year = currentDate.getFullYear();
-    
-      var dateDisplay = document.getElementById("dateDisplay");
-      dateDisplay.textContent = month + " " + day + ", " + year;
-    
-    
-    
-    
+     
 }
