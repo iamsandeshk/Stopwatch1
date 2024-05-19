@@ -5,6 +5,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #333;
+    background-image: url(C:/Users/sande/Downloads/noise-light.png);
     font-family:'Courier','monospace';
 }
 h1 {
@@ -41,14 +42,14 @@ h1 {
 .time {
     font-size: 2em;
     margin-top: 40px;
-}
+}
+
   .name {
       margin-left: 12.5rem;
       margin-right: auto;
       margin-top:1px;
       font-size: 20px;
       font-weight: bold;
-      cursor: pointer;
 }
   .all-boxs{
     display: flex;
@@ -100,7 +101,7 @@ h1 {
   }
 span{
     margin-right: 0.5px;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 span#milliseconds{
@@ -118,15 +119,26 @@ span#milliseconds{
     border-radius:37px;
     width:160px;
     height:70px;
-    margin-left: 20px;
+    margin-left: 18px;
+    margin-right: 4px;
     padding: 1px;
     display: flex;
     flex-direction: row;
 }
+.reorder {
+    border:3px solid rgb(43, 43, 43);
+    box-shadow: 0 0 8px 8px rgb(72, 72, 72) inset;
+    border-radius:50%;
+    width:70px;
+    height:70px;
+    margin-left: 4px;
+    
+   
+}
 #buttons {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     width: 100%;
     margin-bottom:15px;
     margin-top: 5px;
@@ -135,7 +147,7 @@ span#milliseconds{
 #start {
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 8px 8px rgb(141, 185, 142) inset;
+    box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
     color: white;
     width: 60px;
     height: 60px;
@@ -151,10 +163,16 @@ span#milliseconds{
     cursor: pointer;
     position: relative;
 }
+#start:hover {
+    box-shadow: 0 0 6px 6px rgb(123, 122, 122) ; 
+}
+#start:active {
+    background-color: #555;
+}
 #stop {
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 8px 8px rgb(185, 141, 141) inset;
+    box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
     color: white;
     width: 60px;
     height: 60px;
@@ -170,13 +188,46 @@ span#milliseconds{
     cursor: pointer;
     position: relative;
 }
+#stop:hover {
+    box-shadow: 0 0 6px 6px rgb(123, 122, 122)  ; 
+}
+#stop:active {
+    background-color: #555;
+}
+#reset {
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
+    color: white;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top:5px;
+    margin-bottom: 10px;
+    margin-left:5px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+#reset:hover {
+    box-shadow: 0 0 6px 6px rgb(123, 122, 122) ; 
+}
+
+#reset:active {
+    background-color: #555;
+}
 .footer .foot{
     margin-top: 3px;
     margin-bottom: 0;
 }
 .footer{
     text-align: center;
-    color: #fff;
+    color: #e0d7d7;
 }
 .footer i{
     margin: 0.5rem;
@@ -190,44 +241,5 @@ span#milliseconds{
 }
 .social i{
     font-size: 24px;
-    color: #fff;
-}
-#start:active {
-    background-color: #555;
-}
-#stop:active {
-    background-color: #555;
-}
-#start:hover {
-    box-shadow: 0 0 6px 6px rgb(141, 185, 142) ; 
-}
-#stop:hover {
-    box-shadow: 0 0 6px 6px rgb(185, 141, 141)  ; 
-}
-
-#reset {
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 0 0 8px 8px rgb(151, 141, 185) inset;
-    color: white;
-    width: 60px;
-    height: 60px;
-    font-size: 25px;
-    font-weight: bold;
-    margin-top:5px;
-    margin-bottom: 10px;
-    margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-}
-#reset:hover {
-    box-shadow: 0 0 6px 6px rgb(151, 141, 185) ; 
-}
-
-#reset:active {
-    background-color: #555;
+    color: #e0d7d7;
 }
