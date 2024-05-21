@@ -5,14 +5,14 @@ body {
     height: 100vh;
     margin: 0;
     background-color: rgb(0, 0, 10);
-    background-image: url(/noise-light.png);
+    background-image: url(C:/Users/sande/Downloads/noise-light.png);
     font-family:'Courier','monospace';
 }
 h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(197, 196, 196);
 }
 .device {
     background-color: #333;
@@ -25,9 +25,8 @@ h1 {
 }
 
 .screen {
-    background-color: #424242;
     border-radius: 25px;
-    box-shadow: 0 0 8px 8px rgb(0, 0, 10) inset;
+    box-shadow: 0 0 8px 8px rgb(27, 27, 28) inset ;
     color: white;
     width: 310px;
     height: 230px;
@@ -36,15 +35,11 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
-.time {
-    font-size: 2em;
-    margin-top: 40px;
-}
 
-  .name {
+.name {
+    color: rgb(97, 97, 98);
       margin-left: 12.5rem;
       margin-right: auto;
       margin-top:1px;
@@ -59,75 +54,54 @@ h1 {
     font-weight: bold;
 }
 
-.box {
+.box,.box2,.box4 {
     background-color: #fff;
     border-radius: 1px;
     width: 8px;
     height: 8px;
-    margin-top: 60px;
+    margin-top: 58px;
     margin-bottom: 3px;
-  }
-  .box1 {
+}
+
+.box1, .box3 {
+    background-color: #fff;
+    border-radius: 1px;
+    width: 8px;
+    height: 8px;
+    margin-top: 66px;
+    margin-bottom: auto;
+}
+.box1 {
     background-color: darkorange;
-    border-radius: 1px;
-    width: 8px;
-    height: 8px;
-    margin-top: 68px;
-    margin-bottom: auto;
-  }
-  .box2 {
-    background-color: #fff;
-    border-radius: 1px;
-    width: 8px;
-    height: 8px;
-    margin-top: 60px;
-    margin-bottom: 3px;
-  }
-  .box3 {
-    background-color: #fff;
-    border-radius: 1px;
-    width: 8px;
-    height: 8px;
-    margin-top: 68px;
-    margin-bottom: auto;
-  }
-  .box4 {
-    background-color: #fff;
-    border-radius: 1px;
-    width: 8px;
-    height: 8px;
-    margin-top: 60px;
-    margin-bottom: 3px;
-  }
-span{
+}
+
+.time {
     margin-right: 0.5px;
-    font-size: 2.5rem;
+    color: rgb(200, 200, 201);
+    font-size: 2.3em;
+    font-family: cursive;
+    margin-top: 40px;
     font-weight: bold;
 }
 span#milliseconds{
-    margin-left: 1px;
+    color:rgb(93, 93, 94);
+    margin-left:2px;
     font-size: 22px;
-    font-weight: bold;
-}
-.column {
-    display: flex;
-    flex-direction: column;
 }
 .order {
     border:3px solid rgb(43, 43, 43);
-    box-shadow: 0 0 8px 8px rgb(72, 72, 72) inset;
+    box-shadow: 0 0 8px 8px rgb(29, 29, 31);
     border-radius:37px;
-    width:160px;
+    width:150px;
     height:70px;
     margin-left: 18px;
-    margin-right: 4px;
-    padding: 1px;
+    margin-right: 15px;
     display: flex;
     flex-direction: row;
 }
 .reorder {
     border:3px solid rgb(43, 43, 43);
-    box-shadow: 0 0 8px 8px rgb(72, 72, 72) inset;
+    box-shadow: 0 0 8px 8px rgb(29, 29, 31);
     border-radius:50%;
     width:70px;
     height:70px;
@@ -144,7 +118,7 @@ span#milliseconds{
     margin-top: 5px;
 }
 
-#start {
+#start, #stop, #reset {
     background-color: transparent;
     border-radius: 50%;
     box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
@@ -160,67 +134,28 @@ span#milliseconds{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    position: relative;
+   
 }
-#start:hover {
-    box-shadow: 0 0 6px 6px rgb(123, 122, 122) ; 
-}
-#start:active {
-    background-color: #555;
-}
+
 #stop {
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
-    color: white;
-    width: 60px;
-    height: 60px;
-    font-size: 25px;
-    font-weight: bold;
     margin-top:5px;
     margin-bottom: 10px;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-}
-#stop:hover {
-    box-shadow: 0 0 6px 6px rgb(123, 122, 122)  ; 
-}
-#stop:active {
-    background-color: #555;
+    margin-left: 20px;
 }
 #reset {
-    background-color: transparent;
-    border-radius: 50%;
-    box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
-    color: white;
-    width: 60px;
-    height: 60px;
-    font-size: 30px;
-    font-weight: bold;
     margin-top:5px;
     margin-bottom: 10px;
     margin-left:5px;
     margin-right: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
+    font-size: 30px;
 }
-#reset:hover {
-    box-shadow: 0 0 6px 6px rgb(123, 122, 122) ; 
+#stop:hover, #reset:hover, #start:hover {
+    box-shadow: 0 0 6px 6px rgb(123, 122, 122)  ; 
 }
-
-#reset:active {
+#start:active ,#reset:active, #stop:active {
     background-color: #555;
 }
+
 .footer .foot{
     margin-top: 3px;
     margin-bottom: 0;
