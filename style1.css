@@ -1,3 +1,4 @@
+
 body {
     display: flex;
     justify-content: center;
@@ -5,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background-color: rgb(0, 0, 10);
-    background-image: url(noise-light.png);
+    background-image: url(C:/Users/sande/Downloads/noise-light.png);
     font-family:'Courier','monospace';
 }
 h1 {
@@ -13,11 +14,13 @@ h1 {
     justify-content: center;
     align-items: center;
     color: rgb(197, 196, 196);
+    font-family: "Press Start 2P";
+    font-size: 25px;
 }
 .device {
     background-color: #333;
     border-radius: 10%;
-    box-shadow: 0 0 8px 8px #5a5a5a ;
+    box-shadow: 0 0 4px 4px #5a5a5a ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,7 +45,7 @@ h1 {
     color: rgb(97, 97, 98);
       margin-left: 12.5rem;
       margin-right: auto;
-      margin-top:1px;
+      margin-top:0;
       font-size: 20px;
       font-weight: bold;
 }
@@ -59,7 +62,7 @@ h1 {
     border-radius: 1px;
     width: 8px;
     height: 8px;
-    margin-top: 58px;
+    margin-top: 60px;
     margin-bottom: 3px;
 }
 
@@ -68,7 +71,7 @@ h1 {
     border-radius: 1px;
     width: 8px;
     height: 8px;
-    margin-top: 66px;
+    margin-top: 68px;
     margin-bottom: auto;
 }
 .box1 {
@@ -78,10 +81,10 @@ h1 {
 .time {
     margin-right: 0.5px;
     color: rgb(200, 200, 201);
-    font-size: 2.3em;
-    font-family: cursive;
-    margin-top: 40px;
-    font-weight: bold;
+    font-size:1.6em;
+    font-family: "Press Start 2P";
+    margin-top: 50px;
+    font-weight: bolder;
 }
 span#milliseconds{
     color:rgb(93, 93, 94);
@@ -89,7 +92,8 @@ span#milliseconds{
     font-size: 22px;
 }
 .order {
-    border:3px solid rgb(43, 43, 43);
+    background: rgba(43, 43, 43, 0.1); 
+    border:1px solid rgb(120, 119, 119);
     box-shadow: 0 0 8px 8px rgb(29, 29, 31);
     border-radius:37px;
     width:150px;
@@ -100,7 +104,8 @@ span#milliseconds{
     flex-direction: row;
 }
 .reorder {
-    border:3px solid rgb(43, 43, 43);
+    background: rgba(43, 43, 43, 0.1);
+    border:1px solid rgb(121, 120, 120);
     box-shadow: 0 0 8px 8px rgb(29, 29, 31);
     border-radius:50%;
     width:70px;
@@ -119,9 +124,9 @@ span#milliseconds{
 }
 
 #start, #stop, #reset {
-    background-color: transparent;
+    background:rgba(43, 43, 43, 0.1);
     border-radius: 50%;
-    box-shadow: 0 0 8px 8px rgb(123, 122, 122) inset;
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.286) inset;
     color: white;
     width: 60px;
     height: 60px;
@@ -147,11 +152,7 @@ span#milliseconds{
     margin-bottom: 10px;
     margin-left:5px;
     margin-right: 20px;
-    font-size: 33px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-size: 30px;
 }
 #stop:hover, #reset:hover, #start:hover {
     box-shadow: 0 0 6px 6px rgb(123, 122, 122)  ; 
@@ -181,4 +182,16 @@ span#milliseconds{
 .social i{
     font-size: 24px;
     color: #e0d7d7;
+}
+.social{
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.095),rgba(189, 54, 74, 0.341));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1.5px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    border-radius: 30px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width:150px;
 }
