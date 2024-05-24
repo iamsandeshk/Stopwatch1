@@ -14,7 +14,6 @@ h1 {
     justify-content: center;
     align-items: center;
     color: rgb(197, 196, 196);
-    font-family: "Press Start 2P";
     font-size: 25px;
 }
 .device {
@@ -81,8 +80,7 @@ h1 {
 .time {
     margin-right: 0.5px;
     color: rgb(200, 200, 201);
-    font-size:1.6em;
-    font-family: "Press Start 2P";
+    font-size:2.3em;
     margin-top: 50px;
     font-weight: bolder;
 }
