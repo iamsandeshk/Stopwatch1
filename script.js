@@ -1,90 +1,191 @@
-window.onload = function () {
-        
-    var ms = document.querySelector("#milliseconds");
-    var sec = document.querySelector("#seconds");
-    var min = document.querySelector("#minutes");
-    var hr = document.querySelector("#hour");
+var hr = 0;
+var min = 0;
+var sec = 0;
+var count = 0;
 
-    var btnStart = document.querySelector("#start")
-    var btnStop = document.querySelector("#stop")
-    var btnReset = document.querySelector("#reset")
+var prev_hr = 0;
+var prev_min = 0;
+var prev_sec = 0;
+var prev_count = 0;
 
-    var interval;
-    var seconds = 0;
-    var milliseconds = 0;
-    var minutes = 0
-    var hour = 0;
+var diff_hr = 0;
+var diff_min = 0;
+var diff_sec = 0;
+var diff_count = 0;
 
-    ms.innerHTML = "00";
-    sec.innerHTML = ":00";
-    min.innerHTML =":00";
-    hr.innerHTML = "00";
 
-    btnStart.onclick = function() {
-        clearInterval(interval);
-        interval = setInterval(start, 10);
-     } 
+var timer = false;
+var lapCounter = 1;
+const audio = new Audio();
+audio.src = "audio/sound_trim.mp3";
 
-     btnStop.onclick = function() {
-        clearInterval(interval);
-     }
-
-     btnReset.onclick = function() {
-        clearInterval(interval);
-        milliseconds = 0;
-        seconds = 0;
-        minutes= 0;
-        hour= 0;
-        ms.innerHTML = milliseconds + "0";
-        sec.innerHTML = ":" + seconds + "0";
-        min.innerHTML = ":" + minutes + "0";
-        hr.innerHTML = hour + "0";
-     } 
-    
-     function start() {
-        milliseconds++; 
-        
-        if(milliseconds < 9){
-          ms.innerHTML = "0" + milliseconds;
-        }
-  
-        if (milliseconds > 9){
-            ms.innerHTML = milliseconds;
-            
-          } 
-        
-        if (milliseconds > 99) {
-
-          seconds++;
-          sec.innerHTML = ":0" + seconds;
-          milliseconds = 0;
-          ms.innerHTML = "0" + 0;
-        }
-
-        if (seconds > 9){
-            sec.innerHTML = ":" + seconds;
-          } 
-
-        if (seconds > 59) {
-            minutes++;
-            min.innerHTML = ":0" + minutes;
-            seconds = 0;
-            sec.innerHTML = ":0" + seconds;
-        }
-        if (minutes > 9){
-            min.innerHTML = ":" + minutes;
-          } 
-
-        if (minutes > 59) {
-            hour++;
-            hr.innerHTML = "0" + hour;
-            minutes = 0;
-            min .innerHTML = ":0" + minutes;
-      }
-      if (hour > 9) {
-        hr.innerHTML = hour;
-      }
-
-    }
-     
+function $id(id) {
+    return document.getElementById(id);
 }
+
+function start() {
+
+      audio.play();
+      if (!timer){
+          timer = true;
+      $id("start").innerHTML = '<i class="fas fa-pause"></i>';
+          stopwatch();
+      }
+      else
+      {
+          timer=false;
+          $id("start").innerHTML = '<i class="fas fa-play"></i>';
+      }
+    
+}
+
+function reset() {
+    //hiding record container div
+    $id("record-container").style.display = "none";
+    audio.play();
+    timer = false;
+    $id("start").innerHTML = '<i class="fas fa-play"></i> ';
+
+    hr = 0;
+    min = 0;
+    sec = 0;
+    count = 0;
+
+    $id("hr").innerHTML = "00";
+    $id("min").innerHTML = ":00";
+    $id("sec").innerHTML = ":00";
+    $id("count").innerHTML = "00";
+
+    $id("record-table-body").innerHTML = "";
+    lapCounter = 1;
+
+}
+
+let timeoutId;
+function stopwatch() {
+    clearTimeout(timeoutId);
+
+    if (timer == true)
+        count = count + 1;
+
+    if (count == 99) {
+        sec = sec + 1;
+        count = 0;
+    }
+    
+    if (sec == 59) {
+        min = min + 1;
+        sec = 0;
+    }
+    if (min == 59) {
+        hr = hr + 1;
+        min = 0;
+        sec = 0;
+    }
+
+    var hrString = hr;
+    var minString = min;
+    var secString = sec;
+    var countString = count;
+
+    if (hr < 10) {
+        hrString = "0" + hrString;
+    }
+    if (min < 10) {
+        minString = ":0" + minString;
+    }
+    if (sec < 10) {
+        secString = ":0" + secString;
+    }
+    if (count < 10) {
+        countString = "0" + countString;
+    }
+
+    $id("hr").innerHTML = hrString;
+    $id("min").innerHTML = minString;
+    $id("sec").innerHTML = secString;
+    $id("count").innerHTML = countString;
+    timeoutId = setTimeout("stopwatch()", 10);
+}
+
+
+// to get difference of time between last lap and now
+function getdiff(){
+  diff_hr = hr - prev_hr;
+  diff_min = min - prev_min;
+  if (diff_min < 0){
+    diff_min += 60;
+    diff_hr -= 1;
+  }
+  diff_sec = sec- prev_sec;
+  if (diff_sec < 0){
+    diff_sec += 60;
+    diff_min -= 1;
+  }
+  diff_count = count - prev_count;
+  if (diff_count < 0){
+    diff_count += 100;
+    diff_sec -= 1;
+  }
+
+  prev_count = count;
+  prev_sec = sec;
+  prev_min = min;
+  prev_hr = hr;
+}
+
+
+function lap() {
+    
+    if(timer){
+        //displaying record container div
+        $id("record-container").style.display = "block";
+        
+        // calling getting difference function
+        getdiff();
+
+        var lap_time = $id("hr").innerHTML 
+        + $id("min").innerHTML 
+        + $id("sec").innerHTML + ":"
+        + $id("count").innerHTML;
+        audio.play();
+        const table = $id("record-table-body");
+        const row = table.insertRow(0);
+        const no_cell = row.insertCell(0);
+        const time_cell = row.insertCell(1);
+        const diff_cell = row.insertCell(2);
+        
+        no_cell.innerHTML = lapCounter;
+        time_cell.innerHTML = lap_time;
+
+
+
+        var hrString = diff_hr;
+        var minString = diff_min;
+        var secString = diff_sec;
+        var countString = diff_count;
+    
+        if ( diff_hr < 10) {
+            hrString = "0" + hrString;
+        }
+        if (diff_min < 10) {
+            minString = "0" + minString;
+        }
+        if (diff_sec < 10) {
+            secString = "0" + secString;
+        }
+        if (diff_count < 10) {
+            countString = "0" + countString;
+        }
+        diff_cell.innerHTML = hrString+ ":" 
+        + minString+ ":" 
+        + secString + ":" 
+        + countString;
+        
+        lapCounter++;
+    }
+}
+
+
+
+
