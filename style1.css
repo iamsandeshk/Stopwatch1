@@ -1,9 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Courier','monospace';
 }
 
 h1 {
@@ -23,7 +21,7 @@ body {
   height: 100dvh;
   margin-top: -60px;
   background-color: rgb(0, 0, 10);
-  background-image: url(noise-light.png);
+  background-image: url("noise-light.png");
   font-family:'Courier','monospace';
 }
 
