@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>StopWatch</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Stop-Watch</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style1.css" />
     <link
       rel="stylesheet"
@@ -14,47 +16,77 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <div>
-      <h1>STOPWATCH</h1>
-      <div class="device">
-        <div class="screen">
-          <div class="name">シュリー</div>
-          <div class="time">
-            <span id="hour"></span><span id="minutes"></span
-            ><span id="seconds"></span
-            ><sup><span id="milliseconds"></span></sup>
+    <div class="container-fluid">
+      <div id="container">
+        <h1>STOPWATCH</h1>
+        <div class="device">
+          <div class="screen">
+            <div class="name">シュリー</div>
+            <div id="time">
+              <span>
+                <span class="digit" id="hr">00</span>
+              </span>
+              <span>
+                <span class="digit" id="min">:00</span>
+              </span>
+              <span>
+                <span class="digit" id="sec"> :00</span>
+              </span>
+              <span>
+                <span class="ms" id="count">00</span>
+              </span>
+            </div>
+            <div class="all-boxs">
+              <div class="box"></div>
+              <div class="box1"></div>
+              <div class="box2"></div>
+              <div class="box3"></div>
+              <div class="box4"></div>
+            </div>
           </div>
-          <div class="all-boxs">
-            <div class="box"></div>
-            <div class="box1"></div>
-            <div class="box2"></div>
-            <div class="box3"></div>
-            <div class="box4"></div>
+          <div id="btn-container">
+            <div class="order">
+              <div class="buttons" id="start" onclick="start()">
+                <i class="fas fa-play"></i>
+              </div>
+              <div class="buttons" id="reset" onclick="reset()">
+                <i class="fas fa-undo"></i>
+              </div>
+            </div>
+            <div class="reorder">
+              <div class="buttons" id="lap" onclick="lap()">
+                <i class="fas fa-stopwatch"></i>
+              </div>
+            </div>
           </div>
         </div>
-        <div id="buttons">
-          <div class="order">
-            <div id="start"><i class="fa fa-play"></i></div>
-            <div id="stop"><i class="fa fa-pause"></i></div>
-          </div>
-          <div class="reorder">
-            <div id="reset"><i class="fa fa-rotate-right"></i></div>
+        <div>
+          <div id="record-container">
+            <table id="record-table">
+              <tr>
+                <th>Lap Number</th>
+                <th>Time</th>
+                <th>Diff</th>
+              </tr>
+              <tbody id="record-table-body"></tbody>
+            </table>
           </div>
         </div>
-      </div>
-      <div class="footer">
-        <p>Created by Sandesh K<i class="fas fa-smile"></i></p>
-        <div class="social">
-          <a href="https://github.com/iamsandeshk">
-            <i class="fab fa-github"></i
-          ></a>
-          <a href="https://instagram.com/iamsandeshk">
-            <i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.facebook.com/sandesh.kullolli.3">
-            <i class="fab fa-facebook"></i
-          ></a>
+        <div class="footer">
+          <p>Created by Sandesh K<i class="fas fa-smile"></i></p>
+          <div class="social">
+            <a href="https://github.com/iamsandeshk">
+              <i class="fab fa-github"></i
+            ></a>
+            <a href="https://instagram.com/iamsandeshk">
+              <i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://www.facebook.com/sandesh.kullolli.3">
+              <i class="fab fa-facebook"></i
+            ></a>
+          </div>
         </div>
       </div>
     </div>
