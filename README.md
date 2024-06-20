@@ -6,4 +6,4 @@ Web Development Demo Pages collection<br><br>
 
 | Title | Code | Live Demo |
 | ----- | ---- | --------- |
-|Stopwatch| [Code](https://github.com/iamsandeshk/Stopwatch1)| [Demo](https://iamsandeshk.github.io/Stopwatch1/index1.html)|
+|Stopwatch| [Code](https://github.com/iamsandeshk/Stopwatch1/tree/main)| [Demo](https://iamsandeshk.github.io/Stopwatch1/index1.html)|
