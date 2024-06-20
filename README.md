@@ -1,7 +1,6 @@
 * Hello Everyone 
 
-# Web-Development
-Web Development Demo Pages collection<br><br>
+# Stop-Watch Demo Pages<br><br>
 
 
 | Title | Code | Live Demo |
