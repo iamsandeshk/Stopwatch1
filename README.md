@@ -9,4 +9,4 @@
 
 
 buy a coffee
-|(https://buymeacoffee.com/smgtips )|
+(https://buymeacoffee.com/smgtips
